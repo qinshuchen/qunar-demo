@@ -7,8 +7,7 @@ import 'swiper/dist/css/swiper.css'
 import router from './router'
 import 'reset-css'
 import fastClick from 'fastclick'
-import Home from './pages/home/Home'
-import City from './pages/city/City'
+import './assets/styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body);

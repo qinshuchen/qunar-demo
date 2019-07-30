@@ -17,25 +17,10 @@
                     </div>
                 </div>
             </div>
-            <div class="area">
-                <div class="title">A</div>
-                <div class="item-list" >
-                    <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                       <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                       <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                       <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
-                    <div class="item border-bottom" >北京</div>
+            <div class="area" v-for="(prov, index) in provArr" :key="index">
+                <div class="title">{{prov.provinceName}}</div>
+                <div class="item-list" v-for="(city, index2) in prov.citys" :key="index2">
+                    <div class="item border-bottom" >{{city.citysName}}</div>
                 </div>
             </div>
         </div>
@@ -46,6 +31,9 @@
 import Bscroll from 'better-scroll'
 export default {
     name:"CityList",
+    props:{
+        provArr:Array,
+    },
     mounted()
     {
         this.scroll=new Bscroll(this.$refs.wrapper)
